@@ -1,0 +1,3 @@
+interface FastifyRoutesOptions {
+    prefix: string;
+  }

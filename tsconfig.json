@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "es2020",                
+    "module": "commonjs",
+    "lib": ["ES2020"],                  
+    "experimentalDecorators": true,                      
+    "emitDecoratorMetadata": true,                                                     
+    "outDir": "./dist",                        
+    "rootDir": "./src",   
+    "removeComments": true,                                    
+    "typeRoots": [ 
+      "./node_modules/@types",
+       "./src/@types" 
+      ],                                                       
+    "resolveJsonModule": true,      
+    "sourceMap": true,                                   
+    "allowSyntheticDefaultImports": true,                
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,            
+    "strict": true,                                      
+    "noImplicitAny": true,                               
+    "strictNullChecks": true,                            
+    "strictFunctionTypes": true,                        
+    "noImplicitThis": true,                              
+    "alwaysStrict": true,                                
+    "noImplicitReturns": true,                           
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@customPlugins/*": ["./src/customPlugins/*"],
+      "@handlers/*": ["./src/handlers/*"],
+      "@errors/*": ["./src/errors/*"],
+      "@config/*": ["./src/config/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@providers/*": ["./src/providers/*"],
+      "@repositories/*": ["./src/repositories/*"],
+      "@useCases/*": ["./src/useCases/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@schemas/*": ["./src/schemas/*"],
+      "@constants/*": ["./src/constants/*"],
+    }                               
+  },
+"include": [
+  "src/**/*",
+  "src/@types/*.d.ts"
+  ]
+}
