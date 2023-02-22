@@ -4,8 +4,12 @@ import fastifyEnv from '@fastify/env';
 import fastifyJwt from '@fastify/jwt';
 
 import { optionsCors, optionsEnv, optionsJWT } from '@config/fastifyConfig';
+
+/* Importing the plugins*/
+
 import prismaPlugin from '@customPlugins/prismaPlugin';
 import sentryPlugin from '@customPlugins/sentryPlugin';
+import i18nPlugin from '@customPlugins/i18nPlugin';
 
 import Routes from './Routes';
 
@@ -25,6 +29,9 @@ async function registerFastify(): Promise<FastifyInstance> {
 
   await fastify.register(sentryPlugin);
   fastify.log.info('Sentry.io registered')
+
+  await fastify.register(i18nPlugin);
+  fastify.log.info('I18n registered');
 
   await fastify.register(fastifyJwt, optionsJWT(fastify));
   fastify.log.info('JWT registered');
