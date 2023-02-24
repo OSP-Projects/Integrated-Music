@@ -8,8 +8,8 @@ import { optionsCors, optionsEnv, optionsJWT } from '@config/fastifyConfig';
 /* Importing the plugins*/
 
 import prismaPlugin from '@customPlugins/prismaPlugin';
-import sentryPlugin from '@customPlugins/sentryPlugin';
-import i18nPlugin from '@customPlugins/i18nPlugin';
+import sentryPlugin from 'src/plugins/sentryPlugin';
+import i18nPlugin from 'src/plugins/i18nPlugin';
 
 import Routes from './Routes';
 

@@ -14,7 +14,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Users {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   name String
   password String
@@ -24,17 +24,30 @@ model User {
   createdAt DateTime @default(now())
   role Role @default(USER)
 
+  playlist Playlist[]
+  profile Profile[]
   @@map("user")
 }
 
 model Profile {
   id String @id @default(auto()) @map("_id") @db.ObjectId
+  ownerID String @db.ObjectId
   name String
   bio String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   status Int @default(0)
   role Role @default(USER)
+  owner Users @relation(fields: [ownerID], references: [id])
+}
+
+model Playlist {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  ownerID String @db.ObjectId
+  description String
+  createAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  owner Users @relation(fields: [ownerID], references: [id])
 }
 
 enum Role {
@@ -43,3 +56,4 @@ enum Role {
   MOD
   ADMIN
 }
+
