@@ -52,7 +52,7 @@
     "@fastify/jwt": "^6.6.0",
     "@prisma/client": "^4.10.1",
     "@sentry/integrations": "^7.38.0",
-    "@sentry/node": "^7.38.0",
+    "@sentry/node": "^7.39.0",
     "@sentry/tracing": "^7.38.0",
     "@types/uuid": "^9.0.1",
     "fastify": "^4.13.0",
